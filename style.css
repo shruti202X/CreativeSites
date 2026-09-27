@@ -1,0 +1,424 @@
+/* ---------------------------------------
+   Reset
+--------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------
+   Page
+--------------------------------------- */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* ---------------------------------------
+   Gallery
+--------------------------------------- */
+
+.gallery {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* ---------------------------------------
+   Main Image
+--------------------------------------- */
+
+.site-image {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    object-fit: cover;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    transform: scale(1);
+}
+
+
+/* ---------------------------------------
+   Image transition
+--------------------------------------- */
+
+.site-image.changing {
+    opacity: 0;
+
+    transform: scale(1.025);
+}
+
+
+/* ---------------------------------------
+   Overlay
+--------------------------------------- */
+
+.overlay {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.20),
+            transparent 25%,
+            transparent 70%,
+            rgba(0, 0, 0, 0.35)
+        );
+}
+
+
+/* ---------------------------------------
+   Navigation Zones
+--------------------------------------- */
+
+.navigation {
+    position: absolute;
+
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+.navigation:focus,
+.info:focus {
+    outline: none;
+}
+
+
+/* ---------------------------------------
+   Left Navigation
+--------------------------------------- */
+
+.navigation-left {
+    left: 0;
+
+    justify-content: flex-start;
+
+    padding-left: 40px;
+}
+
+
+/* ---------------------------------------
+   Right Navigation
+--------------------------------------- */
+
+.navigation-right {
+    right: 0;
+
+    justify-content: flex-end;
+
+    padding-right: 40px;
+}
+
+
+/* ---------------------------------------
+   Show arrows on hover
+--------------------------------------- */
+
+.navigation-left:hover,
+.navigation-right:hover {
+    opacity: 1;
+}
+
+
+/* ---------------------------------------
+   Arrow
+--------------------------------------- */
+
+.navigation-left span,
+.navigation-right span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 28px;
+
+    font-weight: 200;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* ---------------------------------------
+   Arrow movement
+--------------------------------------- */
+
+.navigation-left:hover span {
+    transform: translateX(-5px);
+}
+
+.navigation-right:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ---------------------------------------
+   Arrow background
+--------------------------------------- */
+
+.navigation-left span:hover,
+.navigation-right span:hover {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* ---------------------------------------
+   Info Button
+--------------------------------------- */
+
+.info {
+    position: absolute;
+
+    top: 30px;
+    left: 30px;
+
+    width: 42px;
+    height: 42px;
+
+    z-index: 20;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.75;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.info:hover {
+    opacity: 1;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    transform: scale(1.05);
+}
+
+.info span {
+    font-size: 20px;
+}
+
+
+/* ---------------------------------------
+   Information Panel
+--------------------------------------- */
+
+.site-info {
+    position: absolute;
+
+    top: 85px;
+    left: 30px;
+
+    z-index: 15;
+
+    width: min(380px, calc(100vw - 60px));
+
+    padding: 22px 24px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+
+    transform:
+        translateY(-10px)
+        scale(0.98);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ---------------------------------------
+   Open Information Panel
+--------------------------------------- */
+
+.site-info.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* ---------------------------------------
+   Site Name
+--------------------------------------- */
+
+.site-info h1 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    letter-spacing: -0.03em;
+}
+
+
+/* ---------------------------------------
+   Website Link
+--------------------------------------- */
+
+.site-info h1 a {
+    color: white;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+.site-info h1 a:hover {
+    opacity: 0.65;
+}
+
+
+/* ---------------------------------------
+   Description
+--------------------------------------- */
+
+.site-description {
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* ---------------------------------------
+   Mobile
+--------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .navigation-left {
+        padding-left: 20px;
+    }
+
+    .navigation-right {
+        padding-right: 20px;
+    }
+
+    .navigation-left span,
+    .navigation-right span {
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+    }
+
+    .info {
+        top: 20px;
+        left: 20px;
+    }
+
+    .site-info {
+        top: 75px;
+        left: 20px;
+
+        width: calc(100vw - 40px);
+
+        padding: 20px;
+    }
+
+    .site-info h1 {
+        font-size: 24px;
+    }
+}

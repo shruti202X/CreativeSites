@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CreativeSites — explore interesting, creative and experimental websites."
+    >
+
+    <title>CreativeSites</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+    <main class="gallery">
+
+        <img
+            id="site-image"
+            class="site-image"
+            src=""
+            alt="Creative website preview"
+        >
+
+        <div class="overlay"></div>
+
+        <button
+            class="navigation navigation-left"
+            id="previous"
+            type="button"
+            aria-label="Previous image"
+        >
+            <span aria-hidden="true">←</span>
+        </button>
+
+        <button
+            class="navigation navigation-right"
+            id="next"
+            type="button"
+            aria-label="Next image"
+        >
+            <span aria-hidden="true">→</span>
+        </button>
+
+        <button
+            class="info"
+            id="info"
+            type="button"
+            aria-label="Show website information"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">ⓘ</span>
+        </button>
+
+        <section
+            class="site-info visible"
+            id="site-info"
+            aria-hidden="true"
+        >
+            <h1>
+                <a
+                    id="site-name"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                </a>
+            </h1>
+            <p
+                id="site-description"
+                class="site-description"
+            >
+            </p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

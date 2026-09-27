@@ -1,0 +1,32 @@
+{
+  "sites": [
+    {
+      "id": "townscaper",
+      "name": "Townscaper",
+      "url": "https://oskarstalberg.com/Townscaper/",
+      "description": "An aesthetically pleasing town-building website made with 500+ terrain blocks, allowing colorful high-rise buildings, protruding balconies, and decorations like trees, benches, birds, and more. It uses procedural rules to define the design, such as making gardens appear in enclosed spaces and adding stairs between buildings.",
+      "images": [
+        "images/townscaper/1.png",
+        "images/townscaper/2.png",
+        "images/townscaper/3.png"
+      ],
+      "relatedLinks": [
+        {
+          "type": "video",
+          "title": "How Townscaper Works",
+          "url": "https://www.youtube.com/watch?v=_1fvJ5sHh6A"
+        },
+        {
+          "type": "video",
+          "title": "Townscaper: Basic tips and tricks",
+          "url": "https://www.youtube.com/watch?v=d8l921bglnE"
+        }
+      ],
+      "techStack": {
+        "Unity": "The core game logic and cross-platform compilation (for exporting to web with HTML5/WebGL build pipeline) are managed inside Unity using C#.",
+        "WebAssembly (Wasm)": "For web version, Unity compiles the C# game code (including the heavy, real-time Wave function collapse math) into highly efficient binary format. Instead of interpretting JavaScript, the browser executes Wasm at near-native CPU speed.",
+        "WebGL": "For web version, once procedural grid math is complted by Wasm, WebGL handles GPU work, such as 3D rendering, mesh mapping, lighting, and shadows directly in the broser tab."
+      }
+    }
+  ]
+}
