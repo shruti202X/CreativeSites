@@ -27,6 +27,35 @@
         "WebAssembly (Wasm)": "For web version, Unity compiles the C# game code (including the heavy, real-time Wave function collapse math) into highly efficient binary format. Instead of interpretting JavaScript, the browser executes Wasm at near-native CPU speed.",
         "WebGL": "For web version, once procedural grid math is complted by Wasm, WebGL handles GPU work, such as 3D rendering, mesh mapping, lighting, and shadows directly in the broser tab."
       }
+    },
+    {
+      "id": "ciechanowski",
+      "name": "Ciechanowski",
+      "url": "https://ciechanow.ski/archives/",
+      "description": "Explores different fascinating concepts of science and technology, used in our everyday lives, with interactive illustrations. Some examples include GPS, Mechanical Watch, Mesh Transforms, and GPGPU's.",
+      "images": [
+        "images/ciechanowski/1.webp",
+        "images/ciechanowski/2.webp",
+        "images/ciechanowski/3.webp"
+      ],
+      "relatedLinks": [
+        {
+          "type": "video",
+          "title": "How Townscaper Works",
+          "url": "https://www.youtube.com/watch?v=_1fvJ5sHh6A"
+        },
+        {
+          "type": "video",
+          "title": "Townscaper: Basic tips and tricks",
+          "url": "https://www.youtube.com/watch?v=d8l921bglnE"
+        }
+      ],
+      "techStack": {
+        "Static Server Site": "The text/layout are served as static HTML/CSS files.",
+        "JavaScript": "Parameterized animations are generated via math and executed frame-by-frame in JavaScript.",
+        "Shapr3D & Blender": "Physical parts are modelled in Shapr3D and lightly processed in Blender before being exported as coordinated data.",
+        "Bare WebGL & HTML% Canvas API": "Bypassing heavyweight libraries like Three.js, the website communicates directly with GPU, using standard WebGL and raw GLSL shaders."
+      }
     }
   ]
 }

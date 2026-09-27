@@ -18,6 +18,7 @@ const image = document.getElementById("site-image");
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const infoButton = document.getElementById("info");
+const randButton = document.getElementById("rand");
 const gallery = document.querySelector(".gallery");
 const infoPanel = document.getElementById("site-info");
 const siteName = document.getElementById("site-name");
@@ -113,7 +114,6 @@ function nextRandomSite() {
         randomIndex === currentSiteIndex
     );
     currentSiteIndex = randomIndex;
-    currentImageIndex = 0;
     updateSite();
 }
 
@@ -124,6 +124,12 @@ function nextRandomSite() {
 infoButton.addEventListener("click",(event) => {
         event.stopPropagation();
         infoPanel.classList.toggle( "visible" );
+    }
+);
+
+randButton.addEventListener("click",(event) => {
+        event.stopPropagation();
+        nextRandomSite();
     }
 );
 
@@ -145,8 +151,9 @@ document.addEventListener( "keydown", (event) => {
         if (event.key === "ArrowRight") nextImage();
         if (event.key === "ArrowLeft") previousImage();
         if (event.key.toLowerCase() === "i") infoPanel.classList.toggle("visible");
+        if (event.key.toLowerCase() === "n") nextRandomSite();
         // if (event.key === "Escape") infoPanel.classList.remove( "visible" );
-        // console.log(`${event.key}`);
+        console.log(`${event.key}`);
 
     }
 );
