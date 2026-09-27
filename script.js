@@ -153,7 +153,7 @@ document.addEventListener( "keydown", (event) => {
         if (event.key.toLowerCase() === "i") infoPanel.classList.toggle("visible");
         if (event.key.toLowerCase() === "n") nextRandomSite();
         // if (event.key === "Escape") infoPanel.classList.remove( "visible" );
-        console.log(`${event.key}`);
+        // console.log(`${event.key}`);
 
     }
 );
