@@ -38,23 +38,41 @@
         "images/ciechanowski/2.webp",
         "images/ciechanowski/3.webp"
       ],
-      "relatedLinks": [
-        {
-          "type": "video",
-          "title": "How Townscaper Works",
-          "url": "https://www.youtube.com/watch?v=_1fvJ5sHh6A"
-        },
-        {
-          "type": "video",
-          "title": "Townscaper: Basic tips and tricks",
-          "url": "https://www.youtube.com/watch?v=d8l921bglnE"
-        }
-      ],
       "techStack": {
         "Static Server Site": "The text/layout are served as static HTML/CSS files.",
         "JavaScript": "Parameterized animations are generated via math and executed frame-by-frame in JavaScript.",
         "Shapr3D & Blender": "Physical parts are modelled in Shapr3D and lightly processed in Blender before being exported as coordinated data.",
-        "Bare WebGL & HTML% Canvas API": "Bypassing heavyweight libraries like Three.js, the website communicates directly with GPU, using standard WebGL and raw GLSL shaders."
+        "Bare WebGL & HTML5 Canvas API": "Bypassing heavyweight libraries like Three.js, the website communicates directly with GPU, using standard WebGL and raw GLSL shaders."
+      }
+    },
+	{
+      "id": "csfieldguide",
+      "name": "CS Field Guide",
+      "url": "https://www.csfieldguide.org.nz/en/",
+      "description": "A collection of free resources to learn computer science with chapters, videos and interactives. It is an open source project available on github, with colorful visual interactives.",
+      "images": [
+        "images/csfg/1.webp",
+        "images/csfg/2.webp",
+        "images/csfg/3.webp"
+      ],
+      "techStack": {
+		    "JavaScript": "All the interactive learning assets are build in JavaScript. They are defined with the help of functions.",
+        "Python": "The routing, search functionality, and the pages are built with Python.",
+        "HTML/SCSS": "Forms the base of the website."
+      }
+    },
+		{
+      "id": "gitdiagram",
+      "name": "Git Diagram",
+      "url": "https://gitdiagram.com/",
+      "description": "Visualize any github repository into architecture diagram or watch a 1-minute video explaination. AI agents can use it through the MCP Server or the Markdown version.",
+      "images": [
+        "images/gitdiagram/1.webp",
+        "images/gitdiagram/2.webp",
+        "images/gitdiagram/3.webp"
+      ],
+      "techStack": {
+        "TypeScript": "The core website is written in TypeScript and uses Generative AI Model APIs to create a diagram or a streaming video, based on a few selected source files, whose function is written in TypeScript. The function to validate and display the graph is also written in TypeScript."
       }
     }
   ]
